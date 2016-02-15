@@ -6,9 +6,10 @@
 package com.jiangnan.es.common.repository;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
- * @description TODO
+ * @description 基础仓储接口
  * @author ywu@wuxicloud.com
  * @2015年4月23日 @上午10:29:12
  */
@@ -45,4 +46,10 @@ public interface BaseRepository<T> {
 	 * @return
 	 */
 	int update(T entity);
+	/**
+	 * 获取列表
+	 * @param params
+	 * @return
+	 */
+	<E> List<E> list(T params);
 }

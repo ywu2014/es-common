@@ -17,33 +17,37 @@ import com.jiangnan.es.common.entity.query.Page;
 public class PageView<T> {
 	
 	public PageView(Page<T> page) {
-		//setTotalPage(page.getTotalPage());
+		setTotal(page.getTotalPage());
 		//setPage(page.getCurrentPage());
-		setTotal(page.getTotalRecords());
+		setRecords(page.getTotalRecords());
 		setRows(page.getData());
 	}
 	/**
 	 * 总页数
 	 */
-	private int totalPage;
+	//private int totalPage;
 	/**
 	 * 当前页
 	 */
 	//private int page;
 	/**
+	 * 总页数
+	 */
+	private int total;
+	/**
 	 * 总记录数
 	 */
-	private long total;
+	private long records;
 	/**
 	 * 数据
 	 */
 	private List<T> rows;
 	
-	public int getTotalPage() {
-		return totalPage;
+	public int getTotal() {
+		return total;
 	}
-	public void setTotalPage(int totalPage) {
-		this.totalPage = totalPage;
+	public void setTotal(int total) {
+		this.total = total;
 	}
 	/*public int getPage() {
 		return page;
@@ -57,11 +61,17 @@ public class PageView<T> {
 	public void setRows(List<T> rows) {
 		this.rows = rows;
 	}
-	public long getTotal() {
-		return total;
+	/*public int getTotalPage() {
+		return totalPage;
 	}
-	public void setTotal(long total) {
-		this.total = total;
+	public void setTotalPage(int totalPage) {
+		this.totalPage = totalPage;
+	}*/
+	public long getRecords() {
+		return records;
+	}
+	public void setRecords(long records) {
+		this.records = records;
 	}
 	
 }
